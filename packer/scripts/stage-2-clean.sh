@@ -7,6 +7,8 @@ mkdir -pm 700 /home/vagrant/.ssh
 curl -sL https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub -o /home/vagrant/.ssh/authorized_keys
 chmod 0600 /home/vagrant/.ssh/authorized_keys
 chown -R vagrant:vagrant /home/vagrant/.ssh
+echo %vagrant ALL=NOPASSWD:ALL > /etc/sudoers.d/vagrant
+chmod 0440 /etc/sudoers.d/vagrant
 
 rm -rf /tmp/*
 rm  -f /var/log/wtmp /var/log/btmp

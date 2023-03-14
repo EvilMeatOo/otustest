@@ -21,12 +21,12 @@
       "iso_url": "http://mirror.linux-ia64.org/centos/8-stream/isos/x86_64/CentOS-Stream-8-x86_64-20230209-boot.iso",
       "name": "centos-8",
       "output_directory": "builds",
-      "shutdown_command": "sudo -S /sbin/halt -h -p",
+      "shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -h -p",
       "shutdown_timeout": "5m",
       "ssh_password": "vagrant",
       "ssh_port": 22,
       "ssh_pty": true,
-      "ssh_timeout": "180m",
+      "ssh_timeout": "30m",
       "ssh_username": "vagrant",
       "type": "virtualbox-iso",
       "vboxmanage": [
@@ -55,7 +55,7 @@
   ],
   "provisioners": [
     {
-      "execute_command": "{{.Vars}} sudo -S -E bash '{{.Path}}'",
+      "execute_command": "{{.Vars}}echo 'vagrant' | sudo -S -E bash '{{.Path}}'",
       "expect_disconnect": true,
       "override": {
         "centos-8": {
