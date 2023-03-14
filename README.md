@@ -1,6 +1,6 @@
-<ДЗ: Подготовить ISO образ с актуальным ядром. Успешено развернуть его через Vargant. Настроить VirtualBox Shared Folders>
+<pre>ДЗ: Подготовить ISO образ с актуальным ядром. Успешено развернуть его через Vargant. Настроить VirtualBox Shared Folders
 
-#1. /Vagrantfile
+1. /Vagrantfile
 #Vagrantfile содержит параметры разворачиваемой вагрантом ВМ из собранного пакером образа CentOS8
 
 MACHINES = {
@@ -45,7 +45,7 @@ Vagrant.configure("2") do |config|
   end
 end
 
-#2. /packer/centos.json
+2. /packer/centos.json
 #centos.json содержит информацию о характеристиках ВМ, с которой пакетр подготовит ISO образ. Образ можно залить в Vagrant cloud и использовать для разворачивания ВМ с уже выполнеными настройками, например обновленым ядром.
 
 
